@@ -11,15 +11,27 @@ nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded", "false");
 }));
 
-document.querySelectorAll("[data-placeholder]").forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-    alert("We'll add the real " + link.dataset.placeholder + " here before publishing.");
-  });
-});
-
-document.getElementById("contact-form").addEventListener("submit", event => {
+const contactForm = document.getElementById("contact-form");
+contactForm.addEventListener("submit", event => {
   event.preventDefault();
+
+  const formData = new FormData(contactForm);
+  const name = String(formData.get("name") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const inquiryType = String(formData.get("type") || "General inquiry");
+  const message = String(formData.get("message") || "").trim();
+  const subject = `Website inquiry: ${inquiryType}`;
+  const body = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Inquiry type: ${inquiryType}`,
+    "",
+    "Message:",
+    message
+  ].join("\n");
+
+  const mailto = `mailto:revrsecowgirl@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   document.querySelector(".form-message").textContent =
-    "This is a preview only. We'll connect a secure form service before launch.";
+    "Your email app should open with your inquiry filled in. Please review it and press Send there.";
+  window.location.href = mailto;
 });

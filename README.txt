@@ -8,9 +8,9 @@ This is a static first draft built with HTML, CSS, and JavaScript. No Node.js or
 3. Keep the `assets` folder beside the HTML file.
 
 ## Before publishing
-- Replace the placeholder social links in `index.html` with confirmed profile URLs.
+- Confirm the X, OnlyFans VIP, OnlyFans Free, Fansly, and MyFreeCams links in `index.html` before publishing. Instagram is intentionally omitted from the prominent link cards.
 - Replace or approve the current photos for the public landing page. For an Instagram-facing destination, choose imagery and wording that comply with Meta's current policies; an age notice does not make otherwise restricted promotion compliant.
-- Connect the contact form to a real form provider. It is currently a non-sending preview.
+- Connect the contact form to a real form provider or replace it with a confirmed business email. It is currently a non-sending preview.
 - Add privacy, terms, and any legally required age/access controls appropriate to the audience and jurisdictions.
 - Confirm all biography and professional claims with Revrse Cowgirl.
 - Check image rights and obtain permission for website use.
@@ -22,3 +22,7 @@ This is a static first draft built with HTML, CSS, and JavaScript. No Node.js or
 - `assets/` — supplied photos
 
 This first draft intentionally contains no fabricated social URLs, email address, credits, or working form endpoint.
+
+
+CONTACT FORM
+The contact form uses a mailto link addressed to revrsecowgirl@gmail.com. When a visitor submits it, their default email app opens with the inquiry prefilled. They must press Send in that app. This does not send messages directly from the website; a hosted form service would be needed for that.
